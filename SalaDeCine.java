@@ -26,7 +26,20 @@ public class SalaDeCine {
 	 */
 	public boolean tieneLibre(int fila, int asiento) {
 		
-		return lugaresLibres[fila - 1][asiento - 1];
+		int indiceFila = posicionarFila(fila);
+		int indiceAsiento = posicionarAsiento(asiento);
+		
+		return lugaresLibres[indiceFila][indiceAsiento];
+	}
+	
+	private int posicionarFila(int fila) {
+		
+		return (fila - 1);
+	}
+	
+	private int posicionarAsiento(int asiento) {
+		
+		return (asiento - 1);
 	}
 	
 	/**
@@ -37,8 +50,11 @@ public class SalaDeCine {
 	 *       de fila y asiento.
 	 */
 	public void ocupar(int fila, int asiento) {
-		
-		lugaresLibres[fila - 1][asiento - 1] = false;
+
+		int indiceFila = posicionarFila(fila);
+		int indiceAsiento = posicionarAsiento(asiento);
+
+		lugaresLibres[indiceFila][indiceAsiento] = false;
 	}
 	
 	/**
