@@ -96,10 +96,10 @@ public class PruebaSalaDeCine {
 	}
 	
 	@Test(expected = Error.class)
-	public void ocuparEnLaFila5ElAsiento9LanzaExcepcionPorqueElAsientoSuperaElMaximo() {
+	public void ocuparEnLaFila5ElAsiento12LanzaExcepcionPorqueElAsientoSuperaElMaximo() {
 		
 		sala = new SalaDeCine();
 		
-		sala.ocupar(5, 9);
+		sala.ocupar(5, 12);
 	}
 }

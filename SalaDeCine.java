@@ -38,7 +38,7 @@ public class SalaDeCine {
 	public boolean tieneLibre(int fila, int asiento) {
 		
 		int indiceFila = posicionarFila(fila);
-		int indiceAsiento = posicionarAsiento(asiento);
+		int indiceAsiento = posicionarAsiento(indiceFila, asiento);
 		
 		return lugaresLibres[indiceFila][indiceAsiento];
 	}
@@ -52,9 +52,9 @@ public class SalaDeCine {
 		return (fila - 1);
 	}
 	
-	private int posicionarAsiento(int asiento) {
+	private int posicionarAsiento(int indiceFila, int asiento) {
 		
-		if ((asiento < 1) || (asiento > lugaresLibres[0].length)) {
+		if ((asiento < 1) || (asiento > lugaresLibres[indiceFila].length)) {
 			
 			throw new Error("El número de asiento no existe: " + asiento);
 		}
@@ -73,7 +73,7 @@ public class SalaDeCine {
 	public void ocupar(int fila, int asiento) {
 
 		int indiceFila = posicionarFila(fila);
-		int indiceAsiento = posicionarAsiento(asiento);
+		int indiceAsiento = posicionarAsiento(indiceFila, asiento);
 
 		lugaresLibres[indiceFila][indiceAsiento] = false;
 	}
