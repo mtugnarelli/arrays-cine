@@ -12,20 +12,20 @@ public class PruebaSalaDeCine {
 		
 		sala = new SalaDeCine();
 		
-		Assert.assertEquals(40, sala.contarLugaresLibres());
+		Assert.assertEquals(35, sala.contarLugaresLibres());
 	}
 	
 	@Test
-	public void ocuparEnLaFila1ElAsiento4() {
+	public void ocuparEnLaFila1ElAsiento2() {
 		
 		sala = new SalaDeCine();
 		
-		sala.ocupar(1, 4);
+		sala.ocupar(1, 2);
 		
-		Assert.assertFalse(sala.tieneLibre(1, 4));
+		Assert.assertFalse(sala.tieneLibre(1, 2));
+		Assert.assertTrue(sala.tieneLibre(1, 1));
 		Assert.assertTrue(sala.tieneLibre(1, 3));
-		Assert.assertTrue(sala.tieneLibre(1, 5));
-		Assert.assertTrue(sala.tieneLibre(2, 4));
+		Assert.assertTrue(sala.tieneLibre(2, 2));
 	}
 	
 	@Test
@@ -58,7 +58,7 @@ public class PruebaSalaDeCine {
 	}
 	
 	@Test
-	public void ocupar4CasillerosDejan36LugaresLibres() {
+	public void ocupar4CasillerosDejan31LugaresLibres() {
 		
 		
 		sala = new SalaDeCine();
@@ -68,7 +68,7 @@ public class PruebaSalaDeCine {
 		sala.ocupar(4, 3);
 		sala.ocupar(4, 4);
 		
-		Assert.assertEquals(36, sala.contarLugaresLibres());
+		Assert.assertEquals(31, sala.contarLugaresLibres());
 	}
 	
 	@Test(expected = Error.class)

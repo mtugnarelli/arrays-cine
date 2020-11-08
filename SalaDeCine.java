@@ -4,8 +4,8 @@ public class SalaDeCine {
 	private boolean[][] lugaresLibres;
 	
 	/**
-	 * post: sala con 40 lugares libres, distribuidos 
-	 *       en 5 filas de 8 asientos cada una.
+	 * post: sala con 35 lugares libres, distribuidos 
+	 *       en 5 filas de 3,5,7,9 y 11 asientos respectivamente.
 	 */
 	public SalaDeCine() {
 		
@@ -29,7 +29,8 @@ public class SalaDeCine {
 	}
 
 	/**
-	 * pre : 'fila' está en el ranto [1..5] y 'asiento' entre [1..8].
+	 * pre : 'fila' está en el ranto [1..5] y 'asiento' entre 
+	 *       [1..3],[1..5],[1..7],[1..9],[1..11] respectivamente.
 	 * 
 	 * post: devuelve si la sala tiene libre el lugar 
 	 *       identificado por el número de fila y número de asiento.
@@ -62,7 +63,8 @@ public class SalaDeCine {
 	}
 	
 	/**
-	 * pre : 'fila' está en el ranto [1..5] y 'asiento' entre [1..8].
+	 * pre : 'fila' está en el ranto [1..5] y 'asiento'  entre 
+	 *       [1..3],[1..5],[1..7],[1..9],[1..11] respectivamente.
 	 *       El asiento indicado está libre.
 	 *        
 	 * post: ocupa el lugar en la sala identificado por el número
