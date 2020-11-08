@@ -1,5 +1,22 @@
 
 public class SalaDeCine {
+	
+	private boolean[][] lugaresLibres;
+	
+	/**
+	 * post: sala con 40 lugares libres, distribuidos 
+	 *       en 5 filas de 8 asientos cada una.
+	 */
+	public SalaDeCine() {
+		
+		lugaresLibres = new boolean[5][8];
+		
+		for (int i = 0; i < lugaresLibres.length; i++) {
+			for (int j = 0; j < lugaresLibres[i].length; j++) {
+				lugaresLibres[i][j] = true;
+			}
+		}
+	}
 
 	/**
 	 * pre : 'fila' está en el ranto [1..5] y 'asiento' entre [1..8].
@@ -9,7 +26,7 @@ public class SalaDeCine {
 	 */
 	public boolean tieneLibre(int fila, int asiento) {
 		
-		return false;
+		return lugaresLibres[fila - 1][asiento - 1];
 	}
 	
 	/**
@@ -21,6 +38,7 @@ public class SalaDeCine {
 	 */
 	public void ocupar(int fila, int asiento) {
 		
+		lugaresLibres[fila - 1][asiento - 1] = false;
 	}
 	
 	/**
