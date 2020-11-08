@@ -71,4 +71,35 @@ public class PruebaSalaDeCine {
 		Assert.assertEquals(36, sala.contarLugaresLibres());
 	}
 	
+	@Test(expected = Error.class)
+	public void ocuparEnLaFila1ElAsiento9LanzaExcepcionPorqueElAsientoSuperaElMaximo() {
+		
+		sala = new SalaDeCine();
+		
+		sala.ocupar(1, 9);
+	}
+	
+	@Test(expected = Error.class)
+	public void ocuparEnLaFila6ElAsiento1LanzaExcepcionPorqueLaFilaSuperaElMaximo() {
+		
+		sala = new SalaDeCine();
+		
+		sala.ocupar(6, 1);
+	}
+	
+	@Test(expected = Error.class)
+	public void ocuparEnLaFila0ElAsiento1LanzaExcepcionPorqueLaFilaNoSuperaElMinimo() {
+		
+		sala = new SalaDeCine();
+		
+		sala.ocupar(0, 1);
+	}
+	
+	@Test(expected = Error.class)
+	public void ocuparEnLaFila5ElAsiento9LanzaExcepcionPorqueElAsientoSuperaElMaximo() {
+		
+		sala = new SalaDeCine();
+		
+		sala.ocupar(5, 9);
+	}
 }

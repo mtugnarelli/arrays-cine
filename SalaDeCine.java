@@ -34,10 +34,19 @@ public class SalaDeCine {
 	
 	private int posicionarFila(int fila) {
 		
+		if ((fila < 1) || (fila > lugaresLibres.length)) {
+		
+			throw new Error("El número de fila no existe: " + fila);
+		}
 		return (fila - 1);
 	}
 	
 	private int posicionarAsiento(int asiento) {
+		
+		if ((asiento < 1) || (asiento > lugaresLibres[0].length)) {
+			
+			throw new Error("El número de asiento no existe: " + asiento);
+		}
 		
 		return (asiento - 1);
 	}
