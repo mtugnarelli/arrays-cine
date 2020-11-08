@@ -71,6 +71,19 @@ public class SalaDeCine {
 	 */
 	public int contarLugaresLibres() {
 		
-		return 0;
+		int libres = 0;
+		
+		for (int i = 0; i < lugaresLibres.length; i++) {
+			
+			for (int j = 0; j < lugaresLibres[i].length; j++) {
+				
+				if (lugaresLibres[i][j]) {
+					
+					libres++;
+				}
+			}
+		}
+		
+		return libres;
 	}
 }
