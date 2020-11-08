@@ -11,13 +11,11 @@ public class SalaDeCine {
 		
 		lugaresLibres = new boolean[5][];
 
-		lugaresLibres[0] = new boolean[3];
-		lugaresLibres[1] = new boolean[5];
-		lugaresLibres[2] = new boolean[7];
-		lugaresLibres[3] = new boolean[9];
-		lugaresLibres[4] = new boolean[11];
+		for (int i = 0; i < lugaresLibres.length; i++) {
+			
+			lugaresLibres[i] = new boolean[(i*2) + 3];
+		}
 
-		
 		for (int i = 0; i < lugaresLibres.length; i++) {
 			for (int j = 0; j < lugaresLibres[i].length; j++) {
 				lugaresLibres[i][j] = true;
